@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/rgaff/OneDrive/Desktop/Misc/quickdraw -not -path */.git/*)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-git --use-npm --no-turbopack --no-import-alias)",
+      "Bash(npx create-next-app@latest temp-init --typescript --tailwind --eslint --app --src-dir --no-git --use-npm --no-turbopack --no-import-alias)",
+      "Bash(cp -r \"C:/Users/rgaff/OneDrive/Desktop/Misc/temp-init/\"* \"C:/Users/rgaff/OneDrive/Desktop/Misc/quickdraw/\")",
+      "Bash(cp \"C:/Users/rgaff/OneDrive/Desktop/Misc/temp-init/\".* \"C:/Users/rgaff/OneDrive/Desktop/Misc/quickdraw/\")",
+      "Bash(rm -rf \"C:/Users/rgaff/OneDrive/Desktop/Misc/temp-init\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where node:*)",
+      "Bash(ls \"C:/Users/rgaff/OneDrive/Desktop/Misc/quickdraw/src/app/\\(app\\)/\")"
+    ]
+  }
+}

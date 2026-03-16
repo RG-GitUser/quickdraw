@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-primary: #0a0a1a;
+  --color-bg-secondary: #12122a;
+  --color-bg-card: #1a1a3e;
+  --color-bg-card-hover: #222252;
+  --color-bg-elevated: #10102a;
+  --color-border: #2a2a5a;
+  --color-border-light: #3a3a6a;
+
+  --color-accent-gold: #f5c542;
+  --color-accent-purple: #bb86fc;
+  --color-accent-blue: #4e8cff;
+  --color-accent-green: #66bb6a;
+  --color-accent-red: #ef5350;
+  --color-accent-orange: #ff6b35;
+
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8888aa;
+  --color-text-muted: #5a5a7a;
+
+  --color-rarity-common: #9e9e9e;
+  --color-rarity-uncommon: #66bb6a;
+  --color-rarity-rare: #4e8cff;
+  --color-rarity-ultra-rare: #bb86fc;
+  --color-rarity-legendary: #f5c542;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* Holographic shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.card-shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 60%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Rarity glow effects */
+.glow-common { box-shadow: 0 0 8px rgba(158, 158, 158, 0.3); }
+.glow-uncommon { box-shadow: 0 0 12px rgba(102, 187, 106, 0.4); }
+.glow-rare { box-shadow: 0 0 16px rgba(78, 140, 255, 0.5); }
+.glow-ultra-rare { box-shadow: 0 0 20px rgba(187, 134, 252, 0.5); }
+.glow-legendary { box-shadow: 0 0 24px rgba(245, 197, 66, 0.6), 0 0 48px rgba(245, 197, 66, 0.2); }
+
+/* Card flip */
+.perspective { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+
+/* Countdown pulse for urgent auctions */
+@keyframes countdown-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.countdown-pulse {
+  animation: countdown-pulse 1s ease-in-out infinite;
+}
+
+/* Bid flash effect */
+@keyframes bid-flash {
+  0% { background-color: rgba(102, 187, 106, 0.3); }
+  100% { background-color: transparent; }
+}
+.bid-flash {
+  animation: bid-flash 0.5s ease-out;
+}
+
